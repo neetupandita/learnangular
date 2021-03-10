@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+
+  }
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 50px 50px 50px 50px;
+  }
+
+ h2 {
+    font-family:"Brush Script MT", cursive;
+    font-size: 50px;
+    color: brown;
+ }
+  .main-form {
+      border: 5px solid goldenrod;
+      padding: 50px;
+         
+  }
+
+.label {
+    width: 156px;
+    cursor: pointer;
+    font-weight: bold;
+    color: blue;
+    padding: 12px 12px 12px 0;
+    display: block;
+  }
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: chocolate;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: chocolate;
+}
+
+input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: chocolate;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: chocolate;
+}
+
+input[type=radio] {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    border-color: chocolate;
+}
+
+
+.title {
+     display: flex;
+     flex-flow: flex-start wrap;
+     white-space: nowrap;
+     
+}
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px #999;
+  }
+  
+  .button:hover {background-color: #3e8e41}
+  
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  #button1 {
+    background-color: #4CAF50;
+    margin-right: 5px;
+    
+  }
+
+  #button2 {
+    background-color: #d6362b;
+  }

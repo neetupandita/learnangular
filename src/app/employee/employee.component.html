@@ -1,0 +1,28 @@
+<app-gender-filter 
+   (genderSelectedEvent)="genderSelectedHandler($event)"
+   [totalCount] = "totalCount"
+   [countM] = "countM"
+   [countF] = "countF"
+   >
+</app-gender-filter>
+<table>
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Annual Salary</th>
+        <th>Date of Birth</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of getEmployeesByFilter(this.valueSelected)">
+        <td><a [routerLink]="['/details',employee.code]">{{employee.code}} </a></td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.gender}}</td>
+        <td>${{employee.annualSal}}</td>
+        <td>{{employee.dob}}</td>
+    </tr>
+    </tbody>
+</table>

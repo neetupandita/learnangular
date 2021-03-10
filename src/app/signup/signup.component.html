@@ -1,0 +1,72 @@
+<div class="container" >
+<header class="header">
+   <h2>{{ heading }}</h2>
+</header>
+<form class="main-form" name="signup" (ngSubmit)="submit()" ngNativeValidate>
+<!-- <div class="main-form"> -->
+<!-- <div class="title">
+<label class="label">Title: </label>
+<input type="radio" id="radio--{{title}}" name="radio--{{title}}"
+    (change) = "setTitle('Ms')" [checked] = "title === 'Ms' "><label class="label">Ms</label>
+<input type="radio" id="radio--{{title}}" name="radio--{{title}}"
+    (change) = "setTitle('Mr')" [checked] = "title === 'Mr' "><label class="label">Mr</label>
+</div> -->
+<div class="title">
+<label class="label">Title: </label>
+  <span *ngFor='let t of title'>
+  <input type="radio" class="field" name="title" (change) = "setTitle(t)"/><label class="label">{{t}}</label>
+  </span> 
+</div>
+<label class="label">Name: </label>
+<input type="text" class="field" name="fullName" [(ngModel)]= "fullName" required>
+
+<label class="label">Email: </label>
+<input type="email" class="field" name="email" [(ngModel)]= "email" placeholder="Enter a valid email address" required>
+
+<label class="label">Password: </label>
+<input type="password" class="field" name="password" [(ngModel)]="password" required>
+<label class="label">Confirm Password: </label>
+<input type="password" class="field" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+
+<label class="label">Gender: </label>
+<select class="field" [(ngModel)]= "gender" name="gender" required>
+      <option value="Male" name="gender" selected>Male</option>
+      <option value="Female" name="gender">Female</option>
+  </select>
+
+
+<label class="label">Address: </label> 
+<input type="text" class="field"  name="address" [(ngModel)]= "address" required>
+       
+<label class="label">Pincode: </label> 
+<input type="number" class="field" name="pincode" [(ngModel)]= "pincode" required>
+
+<label class="label">Country: </label> 
+<input type="text" class="field" name="country" [ngModel]= "country | uppercase" (ngModelChange)="country=$event">
+
+<label class="label">Are you Employed?</label> 
+<input type="checkbox" class="field" [(ngModel)]="isEmployed" name="isEmployed">
+
+<span *ngIf="isEmployed">
+<label class="label">Company: </label> 
+<input type="text" class="field" name="company" [(ngModel)]= "company">
+</span>
+
+<span *ngIf="isEmployed">
+<label class="label">Current Salary: </label> 
+<input type="text" class="field" name="currentSal" [ngModel]= "currentSal | preZeros" (ngModelChange)="currentSal=$event" required>
+</span>
+
+<label class="label">Expected Salary: </label>
+<input type="text" class="field" name="expectedSal" [ngModel]= "expectedSal | currency" (ngModelChange)="expectedSal=$event" required>
+
+<label class="label">About Yourself :</label>
+<textarea rows="4" cols="50" style="height:100px" name="about" class="field" [(ngModel)]= "about"></textarea>
+
+
+<button appChangebg type="submit" class="button" id="button1" [value]= "'submit'">Submit</button>
+<button appChangebg type="reset" class="button" id="button2" [value]= "'reset'" (click)="cancel()">Cancel</button>
+
+</form>
+</div>
+      

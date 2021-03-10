@@ -1,0 +1,8 @@
+<div class="container">
+    <span class="show">Show:</span>
+    <input type="checkbox" class="field" name="all" (change) = "selectAllEmp('all')"><label class="label">All ({{totalCount}})</label>
+    <span *ngFor='let g of showGender'>
+        <input type="radio" class="field" name="gender" (change) = "setGender(g)"/><label class="label">{{g}} ({{g==='Male'? countM : countF}})</label>
+    </span> 
+</div>
+<br>
